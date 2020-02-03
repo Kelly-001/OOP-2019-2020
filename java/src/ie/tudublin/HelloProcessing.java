@@ -30,11 +30,16 @@ public class HelloProcessing extends PApplet
 	
 	public void draw()
 	{	
-		
-		background(0);
+		background(255,0,0);
 		noStroke();
-		fill(255);
-		ellipse(x, mouseY, 50, 50);		
-		x ++;
+		fill(255,255,0);
+		ellipse(250, 300, 400, 400);
+		fill(0,255,255);
+		triangle(250,50,50,400,450,400);
+		fill(169,169,169);
+		ellipse(250,250,200,100);
+		fill(0,0,0);
+		ellipse(250,250,85,85);
+		
 	}
 }
