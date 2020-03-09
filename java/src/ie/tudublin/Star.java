@@ -11,7 +11,7 @@ public class Star
     private float yG;
     private float zG;
     private float absMag;
-
+    
     public void setHab(boolean hab)
     {
         this.hab = hab;
@@ -70,41 +70,49 @@ public class Star
         this.absMag = absMag;
     }
 
-    //converts the object into a string for things like debugging
+    // Converts the object to a string for logging etc
     public String toString()
     {
-        return displayName + "\t" + hab + "\t" + xG + "\t" + yG + "\t" + zG + "\t" + absMag;
+        return displayName + "\t" + hab + "\t" 
+            + xG + "\t" + yG + "\t" + zG + "\t" + absMag; 
     }
 
-    public Star(String displayName,boolean hab, float xG,float yG,float zG,float distance,float absMag)
+    public Star(String displayName
+        , boolean hab, float xG, float yG, float zG, float distance
+        , float absMag
+        )
     {
         this.displayName = displayName;
         this.xG = xG;
         this.yG = yG;
-        this.zG = zG;
+        this.zG = xG;
         this.distance = distance;
-        this.absMag = absMag;
+        this.absMag = absMag;        
     }
 
-    //default constructor
-    //chain to the other constructor
-    //if there isn't a default constructor, java will make it's own
-
+    // Default constructor
+    // Chain to the other constructor
+    // If no default constructor, Java will make one for u
+    // Once you add a constructor, you dont get the 
+    // default one for free
     public Star()
     {
-        this("",false ,0,,0,0,0,0);
+        this("", false, 0, 0, 0, 0, 0);
     }
 
     public Star(TableRow tr)
     {
         this(
-            tr.getString("Display Name"),
-            tr.getInt("Hab") == 1 ,
-            tr.getFloat("xG") ,
-            tr.getFloat("yG") ,
-            tr.getFloat("zG") ,
-            tr.getFloat("Distance") ,
-            tr.getFloat("absMag") ,
+            tr.getString("Display Name")
+            , tr.getInt("Hab?") == 1
+            , tr.getFloat("Xg")
+            , tr.getFloat("Yg")
+            , tr.getFloat("Zg")
+            , tr.getFloat("Distance")
+            , tr.getFloat("AbsMag")
         );
     }
+
+
+    
 }
